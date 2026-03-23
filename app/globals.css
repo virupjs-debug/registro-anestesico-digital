@@ -1,0 +1,344 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0.005 250);
+  --foreground: oklch(0.15 0.02 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 250);
+  --primary: oklch(0.45 0.15 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.01 250);
+  --secondary-foreground: oklch(0.25 0.02 250);
+  --muted: oklch(0.94 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: oklch(0.55 0.18 160);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: oklch(0.45 0.15 250);
+  --chart-1: oklch(0.55 0.22 25);
+  --chart-2: oklch(0.45 0.15 250);
+  --chart-3: oklch(0.55 0.18 160);
+  --chart-4: oklch(0.65 0.15 80);
+  --chart-5: oklch(0.50 0.15 300);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.18 0.02 250);
+  --sidebar-foreground: oklch(0.92 0.01 250);
+  --sidebar-primary: oklch(0.45 0.15 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.25 0.02 250);
+  --sidebar-accent-foreground: oklch(0.92 0.01 250);
+  --sidebar-border: oklch(0.28 0.02 250);
+  --sidebar-ring: oklch(0.45 0.15 250);
+  --warning: oklch(0.75 0.15 80);
+  --warning-foreground: oklch(0.25 0.05 80);
+  --success: oklch(0.55 0.18 160);
+  --success-foreground: oklch(0.99 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.02 250);
+  --foreground: oklch(0.92 0.01 250);
+  --card: oklch(0.16 0.02 250);
+  --card-foreground: oklch(0.92 0.01 250);
+  --popover: oklch(0.16 0.02 250);
+  --popover-foreground: oklch(0.92 0.01 250);
+  --primary: oklch(0.55 0.15 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.22 0.02 250);
+  --secondary-foreground: oklch(0.92 0.01 250);
+  --muted: oklch(0.22 0.02 250);
+  --muted-foreground: oklch(0.60 0.02 250);
+  --accent: oklch(0.55 0.18 160);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.22 0.02 250);
+  --ring: oklch(0.55 0.15 250);
+  --chart-1: oklch(0.60 0.22 25);
+  --chart-2: oklch(0.55 0.15 250);
+  --chart-3: oklch(0.60 0.18 160);
+  --chart-4: oklch(0.70 0.15 80);
+  --chart-5: oklch(0.55 0.15 300);
+  --sidebar: oklch(0.12 0.02 250);
+  --sidebar-foreground: oklch(0.92 0.01 250);
+  --sidebar-primary: oklch(0.55 0.15 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.22 0.02 250);
+  --sidebar-accent-foreground: oklch(0.92 0.01 250);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.55 0.15 250);
+  --warning: oklch(0.75 0.15 80);
+  --warning-foreground: oklch(0.20 0.05 80);
+  --success: oklch(0.60 0.18 160);
+  --success-foreground: oklch(0.99 0 0);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ── Print / PDF styles ────────────────────────────────────────── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  /* ── Color accuracy ── */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+  }
+
+  /* ── Base typography ── */
+  body {
+    background: white !important;
+    color: #111 !important;
+    font-size: 8.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ── Hide ALL buttons first, then re-show form controls ── */
+  button,
+  [role="button"],
+  [data-radix-popper-content-wrapper],
+  [data-radix-dialog-overlay],
+  [data-radix-dialog-content],
+  .print-hide,
+  [data-print="hide"],
+  .group .opacity-0 {
+    display: none !important;
+  }
+
+  /* ── Re-show Radix UI form control buttons (they display selected values) ── */
+  button[role="combobox"],   /* Select trigger → shows selected value */
+  button[role="checkbox"],   /* Checkbox */
+  button[role="radio"],      /* RadioGroup item */
+  button[role="switch"] {    /* Switch */
+    display: inline-flex !important;
+    pointer-events: none !important;
+    border: 1px solid #cbd5e1 !important;
+    background: transparent !important;
+    padding: 1px 4px !important;
+    border-radius: 3px !important;
+    font-size: inherit !important;
+    height: auto !important;
+    min-height: unset !important;
+    align-items: center !important;
+    color: #111 !important;
+  }
+
+  /* Checked state indicator for checkbox/radio/switch */
+  button[role="checkbox"][data-state="checked"]::after,
+  button[role="radio"][data-state="checked"]::after,
+  button[role="switch"][data-state="checked"]::after {
+    content: ' ✓';
+    font-size: 8px;
+    color: #16a34a;
+  }
+
+  /* ── Render native inputs / selects / textareas as plain text ── */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  textarea {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: unset !important;
+    outline: none !important;
+    font-size: inherit !important;
+    color: #111 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 100% !important;
+  }
+
+  /* Hide hidden file inputs */
+  input[type="file"] { display: none !important; }
+
+  /* Labels: keep visible as muted text */
+  label { color: #475569 !important; display: block !important; font-size: 7.5px !important; }
+
+  /* ── Header: compact strip ── */
+  header {
+    border-bottom: 1.5px solid #334155 !important;
+    padding: 5px 10px !important;
+  }
+  header * { color: #111 !important; }
+
+  /* ── Only show ACTIVE tab panel (default "Todos" in vitals, "Vía Aérea" in airway) ── */
+  [role="tablist"] { display: none !important; }
+  [role="tabpanel"][hidden],
+  [data-state="inactive"] { display: none !important; }
+  [data-state="active"] { display: block !important; opacity: 1 !important; }
+
+  /* ── Remove min-height / max constraints ── */
+  .min-h-screen { min-height: unset !important; }
+  .max-w-\[1600px\] { max-width: 100% !important; }
+  .max-h-\[300px\], .max-h-\[70vh\] {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .overflow-auto, .overflow-y-auto { overflow: visible !important; }
+
+  /* ── Main padding ── */
+  main { padding: 4px !important; }
+
+  /* ── Space-y compression ── */
+  .space-y-6 > * + * { margin-top: 5px !important; }
+  .space-y-4 > * + * { margin-top: 4px !important; }
+  .space-y-3 > * + * { margin-top: 3px !important; }
+  .space-y-2 > * + * { margin-top: 2px !important; }
+  .space-y-1 > * + * { margin-top: 1px !important; }
+
+  /* ── Gap compression ── */
+  .gap-6 { gap: 5px !important; }
+  .gap-4 { gap: 4px !important; }
+  .gap-3 { gap: 3px !important; }
+  .gap-2 { gap: 2px !important; }
+
+  /* ── Card radius + border ── */
+  .rounded-xl, .rounded-lg { border-radius: 3px !important; }
+
+  /* ── Card header / content compact padding ── */
+  [class*="pb-3"], [class*="pb-2"] { padding-bottom: 3px !important; }
+  [class*="pt-0"] { padding-top: 0 !important; }
+
+  /* Radix card-like wrapper padding */
+  .p-6 { padding: 5px !important; }
+
+  /* ── Typography scale ── */
+  .text-muted-foreground { color: #475569 !important; }
+  .text-xs  { font-size: 7.5px !important; line-height: 1.2 !important; }
+  .text-sm  { font-size: 8.5px !important; line-height: 1.3 !important; }
+  .text-base{ font-size: 9.5px  !important; line-height: 1.3 !important; }
+  .text-lg  { font-size: 10px  !important; }
+
+  /* ── Tables: compact ── */
+  table { font-size: 7.5px !important; border-collapse: collapse !important; }
+  th, td { padding: 1px 3px !important; }
+  thead th { font-weight: 600 !important; }
+
+  /* ── Icon size ── */
+  svg { width: 10px !important; height: 10px !important; }
+
+  /* ── Badge pills ── */
+  .rounded-full { border-radius: 999px !important; }
+
+  /* ─────────────────────────────────────────────
+     LAYOUT REORG: 2-column patient/airway, then
+     3-column anesthesia/meds/fluids
+  ───────────────────────────────────────────── */
+
+  /* Vitals section: full width, compact chart */
+  #print-vitals-section {
+    width: 100% !important;
+    margin-bottom: 5px !important;
+    break-inside: avoid;
+  }
+
+  /* Hide interactive Tabs in print; show print-only view instead */
+  #print-vitals-section [role="tablist"],
+  #print-vitals-section [role="tabpanel"] {
+    display: none !important;
+  }
+
+  #vitals-print-view {
+    display: block !important;
+  }
+
+  /* Recharts internal text */
+  .recharts-text { font-size: 7px !important; }
+  .recharts-legend-item-text { font-size: 7px !important; }
+  .recharts-wrapper { break-inside: avoid; }
+
+  /* Axis legend row below chart */
+  #print-vitals-section .flex.gap-6 {
+    font-size: 6.5px !important;
+    margin-top: 2px !important;
+  }
+
+  /* Vitals pill indicators */
+  #print-vitals-section .flex.flex-wrap.items-center.gap-2 > div {
+    padding: 1px 4px !important;
+    font-size: 7.5px !important;
+  }
+
+  /* ── Ocultar toda la grilla de detalle ── */
+  #print-grid {
+    display: none !important;
+  }
+
+  /* ── Firma de solo impresión ── */
+  .print-only-signature {
+    display: block !important;
+    margin-top: 12px !important;
+    border-top: 1px solid #cbd5e1 !important;
+    padding-top: 8px !important;
+  }
+
+  /* ── Ocultar la firma dentro del grid (ya está oculto el grid, pero por seguridad) ── */
+  #print-col-right .signature-pad-wrapper { display: none !important; }
+}
